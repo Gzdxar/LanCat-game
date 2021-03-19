@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>set-Game2</name>
+    <events>
+        <variable constant="0" name="Brickss" sid="560579840348370" static="0" type="number">0</variable>
+        <variable constant="0" name="Brick2" sid="516063776420383" static="0" type="number">10</variable>
+        <variable constant="0" name="Timee2" sid="630591134696408" static="0" type="number">0</variable>
+        <variable constant="0" name="second2" sid="490665828897148" static="0" type="number">0</variable>
+        <variable constant="0" name="hit2" sid="900729934929468" static="0" type="number">0</variable>
+        <variable constant="0" name="speed2" sid="526838419386867" static="0" type="number">600</variable>
+        <event-block sid="112153159444790">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="739620786856206" type="ball">
+                    <param id="0" name="Object">Hard30</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="140645925660289" type="System">
+                    <param id="0" name="Variable">hit2</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Add to" sid="481231347957474" type="System">
+                    <param id="0" name="Variable">speed2</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="420654370172033" type="ball">
+                    <param id="0" name="Speed">speed2</param>
+                </action>
+                <action id="0" name="Play" sid="997084478960589" type="Audio">
+                    <param id="0" name="Audio file">point</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-15</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="732173046517332">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="525257963213002" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="797385165481264" type="Hit">
+                    <param id="0" name="Text">&quot;Hit:&quot; &amp; Hit2</param>
+                </action>
+                <action id="0" name="Set text" sid="748477685523478" type="Speed">
+                    <param id="0" name="Text">&quot;Speed:&quot; &amp; Speed2</param>
+                </action>
+                <action id="0" name="Set text" sid="372479462174259" type="Brickss">
+                    <param id="0" name="Text">&quot;Brick:&quot; &amp; Brickss</param>
+                </action>
+                <action id="-1" name="Set X" sid="660022401193886" type="board2">
+                    <param id="0" name="X">Mouse.X</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="540926945390308">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="858298792460771" type="ball">
+                    <param id="0" name="Object">Bricks2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="231185382778028" type="Bricks2" />
+                <action id="-10" name="Add to" sid="846888089358306" type="System">
+                    <param id="0" name="Variable">Brick2</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+                <action id="0" name="Play" sid="335894262563170" type="Audio">
+                    <param id="0" name="Audio file">break block</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-20</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-10" name="Add to" sid="898249064527838" type="System">
+                    <param id="0" name="Variable">Brickss</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="486400282049865">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="983955021268714" type="System">
+                    <param id="0" name="Interval (seconds)">4.5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="379804371657988" type="System">
+                    <param id="0" name="Object to create">Bricks2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">random(430,2000)</param>
+                    <param id="3" name="Y">random(185,950)</param>
+                </action>
+                <action id="-10" name="Add to" sid="849157268167924" type="System">
+                    <param id="0" name="Variable">Brick2</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="621167502029610">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="963418255533985" type="ball">
+                    <param id="0" name="Object">airWallFail</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="641883786490511" type="Audio" />
+                <action id="-16" name="Set opacity" sid="273354653450105" type="fail">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-9" name="Destroy" sid="714511706355198" type="ball" />
+                <action id="-9" name="Destroy" sid="482701586496677" type="Bricks2" />
+                <action id="-1" name="Set X" sid="726020827901202" type="YES">
+                    <param id="0" name="X">1040</param>
+                </action>
+                <action id="-2" name="Set Y" sid="507560597466182" type="YES">
+                    <param id="0" name="Y">850</param>
+                </action>
+                <action id="0" name="Play" sid="570353137820959" type="Audio">
+                    <param id="0" name="Audio file">不__</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-15</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="252743194604376">
+            <conditions>
+                <condition id="0" name="On clicked" sid="100403322143873" type="YES" />
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="912687269563334" type="System" />
+                <action id="-21" name="Reset global variables" sid="927317307285464" type="System" />
+                <action id="-45" name="Reset persisted objects" sid="593422868504782" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="154638408601536">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="690957001225814" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="584279960680678" type="System">
+                    <param id="0" name="Variable">second2</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="855276088779106" type="TTime">
+                    <param id="0" name="Text">&quot;Time:&quot; &amp; second2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="811332056817406">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="601759672361723" type="ball" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="431146759105180" type="TTime">
+                    <param id="0" name="Opacity">0</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="283396123229394" type="TIMEE2">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="717153135512701" type="System">
+                    <param id="0" name="Variable">Timee2</param>
+                    <param id="1" name="Value">second2</param>
+                </action>
+                <action id="0" name="Set text" sid="587043702793646" type="TIMEE2">
+                    <param id="0" name="Text">&quot;Time:&quot; &amp; Timee2</param>
+                </action>
+                <action id="-9" name="Set value" sid="542462297966005" type="System">
+                    <param id="0" name="Variable">Brick2</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="608251325338011">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="167472356656573" type="System">
+                    <param id="0" name="Variable">Brick</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">15</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="761388476131785" type="waring">
+                    <param id="0" name="X">1180</param>
+                </action>
+                <action id="-2" name="Set Y" sid="462247703413588" type="waring">
+                    <param id="0" name="Y">655</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="286018030743601">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="155060778341417" type="System">
+                    <param id="0" name="Variable">Brick</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">16</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="581513118574094" type="System" />
+                <action id="-21" name="Reset global variables" sid="914990456601498" type="System" />
+                <action id="-45" name="Reset persisted objects" sid="319994547609014" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="942282017186206">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="257942575748086" type="Mouse">
+                    <param id="0" name="Mouse button">1</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">wallad</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="140181782621880" type="wallad" />
+            </actions>
+        </event-block>
+        <event-block sid="361230921440770">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="299631339246916" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="762262191277336" type="Audio">
+                    <param id="0" name="Audio file">backmusic</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-35</param>
+                    <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block disabled="1" sid="837178295990487">
+                    <conditions>
+                        <condition id="5" inverted="1" name="Is tag playing" sid="791389128758244" type="Audio">
+                            <param id="0" name="Tag">&quot;music&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="813372633080582">
+            <conditions>
+                <condition id="0" name="On clicked" sid="353167141363129" type="Back3" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="600776227025888" type="Audio" />
+                <action id="-21" name="Reset global variables" sid="212766539857949" type="System" />
+                <action id="-45" name="Reset persisted objects" sid="833760458077569" type="System" />
+                <action id="-9" name="Destroy" sid="476441078321534" type="Bricks2" />
+                <action id="-2" name="Go to layout" sid="796230012708042" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
