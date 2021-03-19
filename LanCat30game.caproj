@@ -1,0 +1,977 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>LanCat30game</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>20v8ld7vir55n</unique-id>
+    <saved-with-version>24200</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>2560</width>
+        <height>1440</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>Menu</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar only</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="theWall" sid="460724103275256">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="709920858831868" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\the wall.png">
+                        <collision-poly>
+                            <point x="0.0441989" y="0.0869565" />
+                            <point x="0.955801" y="0.0869565" />
+                            <point x="1" y="0.5" />
+                            <point x="0.957182" y="0.915761" />
+                            <point x="0.0428177" y="0.915761" />
+                            <point x="0.00138122" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="board" sid="776634229238950">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="886973211773505">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="316734034481620">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="ScrollTo" sid="104052125357871">
+                    <behavior id="scrollto" />
+                </behavior-type>
+                <behavior-type name="8Direction" sid="666496623033855">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="925907566620068" speed="5">
+                    <frame duration="1" hotspotX="0.500462" hotspotY="0.5" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\board.png">
+                        <collision-poly>
+                            <point x="0.445061" y="0.210622" />
+                            <point x="0.632502" y="0.227106" />
+                            <point x="0.712835" y="0.274725" />
+                            <point x="0.829178" y="0.283883" />
+                            <point x="0.924285" y="0.324176" />
+                            <point x="0.987072" y="0.316849" />
+                            <point x="0.0544783" y="0.441391" />
+                            <point x="0.281625" y="0.32967" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="873952682545756">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="ball" sid="969071412789105">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="444265200975555">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="367735832589550">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="822636739583788">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="399182657095766" speed="5">
+                    <frame duration="1" hotspotX="0.477778" hotspotY="0.505556" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\ball.png">
+                        <collision-poly>
+                            <point x="0.544445" y="0.0277778" />
+                            <point x="0.988889" y="0.272222" />
+                            <point x="0.838889" y="0.705555" />
+                            <point x="0.361111" y="1" />
+                            <point x="0.0499998" y="0.644444" />
+                            <point x="0.0222222" y="0.238889" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="wall2" sid="446894638930563">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="232017015951541">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="613786768134374" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501272" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\wall2.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.5" y="0" />
+                            <point x="0.765625" y="0.0763358" />
+                            <point x="0.980469" y="0.381679" />
+                            <point x="0.983398" y="0.521628" />
+                            <point x="0.998047" y="0.603053" />
+                            <point x="0.984375" y="0.776081" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="wall1" sid="881343743675008">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="516985640709358">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="150" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="969566913355544" speed="60">
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0.0130152" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501085" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="airwall" sid="860331322458490">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="423341277271018">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="702696303096720" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="wallad" sid="902551358105013">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="96" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="410322472355889" speed="60">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="the30" sid="751786663657522">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Health" sid="613236230766343" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Solid" sid="174159040312982">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="525170872208647" speed="5">
+                    <frame duration="1" hotspotX="0.915789" hotspotY="9.7" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\30.png">
+                        <collision-poly>
+                            <point x="0.257895" y="0.15625" />
+                            <point x="0.531579" y="0.025" />
+                            <point x="0.763158" y="0.125" />
+                            <point x="0.931579" y="0.425" />
+                            <point x="0.842105" y="0.7125" />
+                            <point x="0.61579" y="0.8375" />
+                            <point x="0.263158" y="0.775" />
+                            <point x="0.168421" y="0.50625" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Hit" sid="619181459180459">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Speed" sid="492080314868619">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Bricks" sid="911707877243964">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="546736670487667">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="423817308638946" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\562.png">
+                        <collision-poly>
+                            <point x="0.183333" y="0.138095" />
+                            <point x="0.483333" y="0" />
+                            <point x="0.877778" y="0.204762" />
+                            <point x="0.95" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0.519048" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="spawnAir" sid="427048031818776">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="305321544754564" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Touch" sid="237827104505932">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="fail" sid="685468735515415">
+            <plugin id="Sprite" />
+            <container>
+                <type>YES</type>
+                <type>fail</type>
+            </container>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="795498854684663" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\fall.png">
+                        <collision-poly>
+                            <point x="0.0983051" y="0.176829" />
+                            <point x="0.5" y="0.0762195" />
+                            <point x="0.901695" y="0.176829" />
+                            <point x="0.901695" y="0.5" />
+                            <point x="0.976271" y="0.957317" />
+                            <point x="0.5" y="0.923781" />
+                            <point x="0.0983051" y="0.823171" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="airWallFail" sid="872566049815889">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="757789641180813">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="297077848667111" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="YES" sid="748308777009520">
+            <plugin id="Button" />
+            <container>
+                <type>YES</type>
+                <type>fail</type>
+            </container>
+        </object-type>
+        <object-type name="WIn" sid="764787254412044">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="273460220069475" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\WIn.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TTime" sid="824068358347625">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TIMEE2" sid="390930555836518">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Audio" sid="657308700269149">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="A插圖" sid="894260465814837">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="360705064110159" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Program Files\Minecraft檔+圖\圖片檔案\電畫圖\我\A插圖2.png">
+                        <collision-poly>
+                            <point x="0.196" y="0.196" />
+                            <point x="0.5" y="0.096" />
+                            <point x="0.896" y="0.5" />
+                            <point x="0.814" y="0.814" />
+                            <point x="0.5" y="0.946" />
+                            <point x="0.172" y="0.828" />
+                            <point x="0.14" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Made" sid="120161199950010">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="989795888055645" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506173" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\Made by.png">
+                        <collision-poly>
+                            <point x="0.0243902" y="0.197531" />
+                            <point x="0.97561" y="0.197531" />
+                            <point x="0.983232" y="0.493827" />
+                            <point x="0.951219" y="0.604938" />
+                            <point x="0.5" y="0.753086" />
+                            <point x="0.0503049" y="0.592593" />
+                            <point x="0.00914634" y="0.493827" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="429165607884781">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="waring" sid="218371035249253">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="531699778898868" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501618" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\waring.png">
+                        <collision-poly>
+                            <point x="0.175223" y="0.508091" />
+                            <point x="0.5" y="0.469256" />
+                            <point x="0.831473" y="0.488673" />
+                            <point x="0.910714" y="0.498382" />
+                            <point x="0.885045" y="0.666667" />
+                            <point x="0.122768" y="0.644013" />
+                            <point x="0.0859375" y="0.498382" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Browser" sid="364477086390882">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="Hard30" sid="274775176713476">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="215269313012502">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="226431657212399" speed="5">
+                    <frame duration="1" hotspotX="0.602649" hotspotY="0.403226" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\Hard30.png">
+                        <collision-poly>
+                            <point x="0.397351" y="0.016129" />
+                            <point x="0.615894" y="0" />
+                            <point x="0.774834" y="0.0967742" />
+                            <point x="0.94702" y="0.419355" />
+                            <point x="0.834437" y="0.774194" />
+                            <point x="0.655629" y="0.943548" />
+                            <point x="0.291391" y="0.91129" />
+                            <point x="0.0397351" y="0.741936" />
+                            <point x="0.10596" y="0.290323" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Brickss" sid="825655936155162">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="board2" sid="491115699915876">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="267471016219949">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="254214536194404">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="ScrollTo" sid="743229254895942">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="243823557571811" speed="5">
+                    <frame duration="1" hotspotX="0.500462" hotspotY="0.5" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\board.png">
+                        <collision-poly>
+                            <point x="0.445061" y="0.210622" />
+                            <point x="0.632502" y="0.227106" />
+                            <point x="0.712835" y="0.274725" />
+                            <point x="0.829178" y="0.283883" />
+                            <point x="0.924285" y="0.324176" />
+                            <point x="0.987072" y="0.316849" />
+                            <point x="0.0544783" y="0.441391" />
+                            <point x="0.281625" y="0.32967" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Helper" sid="324832796867827">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="957393149717239">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="361362561753941">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="724723228971328">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="388760031957932" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\helper.png">
+                        <collision-poly>
+                            <point x="0.0645162" y="0.336879" />
+                            <point x="0.195565" y="0.218085" />
+                            <point x="0.423387" y="0.156028" />
+                            <point x="0.576613" y="0.212766" />
+                            <point x="0.729839" y="0.269504" />
+                            <point x="0.951613" y="0.429078" />
+                            <point x="0.91129" y="0.652482" />
+                            <point x="0.677419" y="0.737589" />
+                            <point x="0.483871" y="0.762411" />
+                            <point x="0.207661" y="0.719858" />
+                            <point x="0.0362903" y="0.595745" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Helper2" sid="874072371339285">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="656239502217529">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="627742119826412">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="327773535987123">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="414533109146761" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\helper.png">
+                        <collision-poly>
+                            <point x="0.0645162" y="0.336879" />
+                            <point x="0.195565" y="0.218085" />
+                            <point x="0.423387" y="0.156028" />
+                            <point x="0.576613" y="0.212766" />
+                            <point x="0.729839" y="0.269504" />
+                            <point x="0.951613" y="0.429078" />
+                            <point x="0.91129" y="0.652482" />
+                            <point x="0.677419" y="0.737589" />
+                            <point x="0.483871" y="0.762411" />
+                            <point x="0.207661" y="0.719858" />
+                            <point x="0.0362903" y="0.595745" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Help" sid="519518868032750">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="763395757539634" speed="5">
+                    <frame duration="1" hotspotX="0.501887" hotspotY="0.5" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\help.png">
+                        <collision-poly>
+                            <point x="0.50566" y="0.0625" />
+                            <point x="0.992453" y="0.859375" />
+                            <point x="0.50566" y="0.96875" />
+                            <point x="0.0226415" y="0.859375" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="suck" sid="995806383808075">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="921584599393195" speed="5">
+                    <frame duration="1" hotspotX="0.500805" hotspotY="0.5" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\suck.png">
+                        <collision-poly>
+                            <point x="0.00483092" y="0.28125" />
+                            <point x="0.499195" y="0.046875" />
+                            <point x="0.995169" y="0.265625" />
+                            <point x="0.974235" y="0.484375" />
+                            <point x="0.996779" y="0.734375" />
+                            <point x="0.499195" y="0.953125" />
+                            <point x="0.00805153" y="0.671875" />
+                            <point x="0.00322061" y="0.484375" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Back3" sid="730687646996987">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Back2" sid="298780578613628">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="background" sid="575228392911700">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="678110621602907" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\background.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="normal" sid="756522875651880">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="659556227821917" speed="5">
+                    <frame duration="1" hotspotX="1.62182" hotspotY="-2.81159" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\Normal.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Button" sid="262093978969289">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Hard" sid="646259539464604">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="270753864915782" speed="5">
+                    <frame duration="1" hotspotX="-0.74552" hotspotY="-2.81159" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\Hard.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite" sid="995087162493970">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="799455293474983" speed="5">
+                    <frame duration="1" hotspotX="0.508403" hotspotY="0.567164" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\Back.png">
+                        <collision-poly>
+                            <point x="0.508403" y="0.432836" />
+                            <point x="0.997899" y="0.552239" />
+                            <point x="0.508403" y="0.58209" />
+                            <point x="0.0105042" y="0.552239" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Bricks2" sid="237800172137867">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="642140757018305">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="841206479526573" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\562.png">
+                        <collision-poly>
+                            <point x="0.183333" y="0.138095" />
+                            <point x="0.483333" y="0" />
+                            <point x="0.877778" y="0.204762" />
+                            <point x="0.95" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0.519048" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite2" sid="386774377621447">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="660582685971468" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\lanhuh.png">
+                        <collision-poly>
+                            <point x="0.179119" y="0.273392" />
+                            <point x="0.5" y="0.169591" />
+                            <point x="0.833333" y="0.254386" />
+                            <point x="0.845785" y="0.5" />
+                            <point x="0.955939" y="0.932749" />
+                            <point x="0.5" y="1" />
+                            <point x="0.189655" y="0.710526" />
+                            <point x="0.0632184" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground" sid="883240960454219">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\sophy\OneDrive\Desktop\網頁遊戲製作\PogChamp.png" />
+        </object-type>
+        <object-type name="loadbg" sid="663001570360138">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="SpriteFont" sid="580995426242725">
+            <plugin id="Spritefont2" />
+            <texture />
+        </object-type>
+        <object-type name="Loading" sid="560026176928599">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="load2" sid="866369556152470">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Load" sid="880239490264217">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Sprite3" sid="123739584851069">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="906731325237571" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="CantPlayOnMobile" sid="877355846470948">
+            <plugin id="Text" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Game.xml</layout>
+        <layout>Game2.xml</layout>
+        <layout>Menu.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>set-Game.xml</event-sheet>
+        <event-sheet>set-Menu.xml</event-sheet>
+        <event-sheet>set-Game2.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="2" />
+        <global-instance type="Touch" uid="22">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Audio" uid="30">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Keyboard" uid="32" />
+        <global-instance type="Browser" uid="39" />
+    </global-instances>
+    <sounds-folder>
+        <file name="OMG.m4a" />
+        <file name="不~~.m4a" />
+        <file name="OMG.ogg" />
+        <file name="不__.ogg" />
+        <file name="point.ogg" />
+        <file name="Flamingo.ogg" />
+        <file name="backmusic.ogg" />
+        <file name="break block.ogg" />
+        <file name="Ding.ogg" />
+        <file name="Flash.ogg" />
+    </sounds-folder>
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
