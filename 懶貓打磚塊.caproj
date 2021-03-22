@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
-    <name>LanCat30game</name>
+    <name>懶貓打磚塊</name>
     <description></description>
     <version>1.0.0.0</version>
     <author></author>
@@ -20,7 +20,6 @@
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
-        <plugin author="Scirra" id="sliderbar" version="1">Slider bar</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
@@ -915,9 +914,6 @@
         </object-type>
         <object-type name="CantPlayOnMobile" sid="877355846470948">
             <plugin id="Text" />
-        </object-type>
-        <object-type name="Music" sid="219671428658998">
-            <plugin id="sliderbar" />
         </object-type>
     </object-folder>
     <families />
