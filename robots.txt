@@ -1,6 +1,6 @@
 # hexo robots.txt
 User-agent: *
-Allow: /https://gzdxar.github.io/Lancat-game/
+Allow: /https://gzdxar.github.io/Lancat-game//
 Allow: /archives/
 Allow: /categories/
 Allow: /tags/
